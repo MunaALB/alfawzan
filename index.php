@@ -1,115 +1,14 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="ar">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Medicust - Health and Medical HTML5 Template" />
-    <meta name="author" content="Envalab" />
-    <title>Medicust - Health and Medical HTML5 Template</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.png" />
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <!-- FlatIcon CSS -->
-    <link href="css/flaticon.css" rel="stylesheet" />
-    <!-- IcoFont CSS -->
-    <link href="css/icofont.min.css" rel="stylesheet" />
-    <!-- Animate CSS -->
-    <link href="css/animate.css" rel="stylesheet" />
-    <!-- Owl Carousel CSS -->
-    <link href="css/owl.carousel.css" rel="stylesheet" />
-    <!-- Hamburgers CSS -->
-    <link href="css/hamburgers.min.css" rel="stylesheet" />
-    <!-- Style CSS -->
-    <link href="css/style.css" rel="stylesheet" />
-    <!-- Responsive CSS -->
-    <link href="css/responsive.css" rel="stylesheet" />
+     <?php include 'includes/head.php';?>
 </head>
 
 <body style="direction: rtl;">
     <!-- page-wrapper start -->
     <div class="page-wrapper">
-        <header>
-            <div class="topbar d-none d-md-block">
-                <div class="container-xl">
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-sm-5">
-                            <p class="topbar-info">
-                                <i class="icofont-google-map"></i>
-                                <span>طريق زناتة الجديدة بالقرب من كوبري السريع</span>
-                            </p>
-                        </div>
-                        <div class="col-sm-7 text-right">
-                            <p class="topbar-info">
-                                <i class="icofont-envelope-open"></i>
-                                <span>emergency@alfawzan.ly</span>
-                            </p>
-                            <p class="topbar-info">
-                                <i class="icofont-headphone-alt-1"></i>
-                                <span> 911361015 218 +</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.topbar -->
-            <nav class="navbar navbar-expand-lg main-nav sticky">
-                <div class="container-xl px-15 px-lg-0">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="img/c3c00b78115381.5c9b62d3e908b.png" alt="Site Logo" height="70">
-
-                    </a>
-                    <p style="font-weight: bold; color: white;"> صيدلية <br> الفوزان </p>
-
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu"
-                        aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="main_menu">
-                        <ul class="navbar-nav ml-auto">
-                            <li>
-                                <a href="index.html">الرئيسية</a>
-                            </li>
-                            <li>
-                                <a href="#about-us"> من نحن </a>
-                            </li>
-                            <li>
-                                <a href="#team">فريقنا</a>
-                            </li>
-                            <li>
-                                <a href="#testimonial">آراء</a>
-                            </li>
-                            <li>
-                                <a href="blog.html">منتجاتنا </a>
-                            </li>
-                           
-                        </ul>
-                        <div class="d-block d-md-none">
-                            <p class="topbar-info">
-                                <i class="icofont-google-map"></i>
-                                <span>طريق زناتة الجديدة بالقرب من كوبري السريع</span>
-                            </p>
-                            <p class="topbar-info">
-                                <i class="icofont-envelope-open"></i>
-                                <span>emergency@alfawzan.ly</span>
-                            </p>
-                            <p class="topbar-info">
-                                <i class="icofont-headphone-alt-1"></i>
-                                <span>911361015 218 +</span>
-                            </p>
-                        </div>
-                        <span class="navbar-text">
-                            <a href="#contact" class="theme-btn">أحصل على إستشارة</a>
-                        </span>
-                    </div>
-                </div>
-            </nav>
-        </header><!-- header -->
+ <?php include 'includes/header.php'; ?>
         <main class="site-content">
             <div class="hero-section">
                 <div class="container-lg h-100 px-lg-0">
@@ -783,110 +682,11 @@
                     tabindex="0"></iframe>
             </div>
         </div>
-        <footer>
-            <div class="footer-lg">
-                <div class="container">
-                    <div class="row justify-content-lg-between">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="footer-col">
-                                <a class="" href="index.html">
-                                    <img src="img/c3c00b78115381.5c9b62d3e908b.png" alt="Site Logo">
-                                    <p
-                                        style="font-weight: bold; color: white;display:inline-block;vertical-align: middle;">
-                                        صيدلية <br> الفوزان </p>
-                                </a>
-
-                                <div class="footer-social">
-                                    <a href="#">
-                                        <i class="icofont-facebook"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="icofont-skype"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="icofont-twitter"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="footer-col">
-                                <h2 class="footer-title">أصنافنا</h2>
-                                <ul>
-                                    <li><a href="#">العناية بالطفل</a></li>
-                                    <li><a href="#">العناية بالشعر</a></li>
-                                    <li><a href="#">العناية بالبشرة</a></li>
-                                    <li><a href="#">منتجات طبيعية</a></li>
-                                    <li><a href="#">مستلزمات طبية</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="footer-col">
-                                <h2 class="footer-title">توجيه</h2>
-                                <ul>
-                                    <li><a href="#aboute-us">عن صيدلية الفوزان</a></li>
-                                    <li><a href="#products">منتجاتنا</a></li>
-                                    <li><a href="#conceling">الحصول على استشارة</a></li>
-                                    <li><a href="#ad">اعلانات</a></li>
-                                    <li><a href="contact.html">اتصل بنا </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-md-6 pl-xl-0">
-                            <div class="footer-col">
-                                <h2 class="footer-title">بيانات الاتصال</h2>
-                                <p><i class="icofont-google-map mr-1"></i>طريق زناتة الجديدة بالقرب من كوبري السريع</p>
-
-                                <p><i class="icofont-envelope-open mr-1"></i>البريد الاكتروني: emergency@alfawzan.ly</p>
-
-                                <p><i class="icofont-headphone-alt-1 mr-1"></i>رقم الهاتف: 911361015 218 +</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.footer-lg -->
-            <div class="footer-bottom">
-                <p>Copyright 2020 <i class="icofont-heart-alt"></i> All Rights Reserved.</p>
-            </div><!-- /.footer-bottom -->
-        </footer>
-    </div>
-    <!-- page-wrapper end -->
-
-    <div class="modal fade" id="popup-video">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <iframe src="https://www.youtube.com/embed/uQBL7pSAXR8" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
+  <?php include 'includes/footer.php'; ?>
     </div>
 
-    <!-- Back2Top -->
-    <div class="back2Top bg1 wave">
-        <i class="icofont-dotted-up text-white"></i>
-    </div>
-
-    <!-- Required JavaScript Files -->
-    <!-- jQuery JS -->
-    <script src="js/jquery-1.12.4.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="js/owl.carousel.js"></script>
-    <!-- Wow.js -->
-    <script src="js/wow.min.js"></script>
-    <!-- WayPoints JS -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <!-- CounterUp JS -->
-    <script src="js/jquery.counterup.min.js"></script>
-    <!-- Smooth Scroll JS -->
-    <script src="js/SmoothScroll.js"></script>
-    <!-- Main.js -->
-    <script src="js/main.js"></script>
+  
+     <?php include 'includes/scriptIncludes.php';?>
 </body>
 
 </html>

@@ -2434,4 +2434,42 @@ img {
 	margin: 100px 0;
 }
 
+.products-filter {
+	margin-top: 50px;
+	margin-bottom: 40px;
+	text-align: center
+}
+
+.products-filter ul {
+
+	text-align: center;
+	margin-bottom: 0
+}
+
+.products-filter ul li {
+	display: inline;
+	margin-right: 30px;
+}
+
+.products-filter ul li:last-child {
+	margin-left: 0
+}
+
+.products-filter ul li a {
+	font-size: 16px;
+	font-family: 'Almarai',
+		sans-serif;
+	text-transform: uppercase;
+	color: #2f2f2f;
+	padding-bottom: 8px;
+	border-bottom: 2px solid transparent;
+	font-weight: bold
+}
+
+.products-filter ul li a:hover,
+.products-filter ul li a.active-filter {
+	color: #00549e;
+	border-bottom: 2px solid #00549e
+}
+
 /* 404 end 
