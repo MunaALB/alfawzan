@@ -6,10 +6,10 @@
             </a>
             <p style="font-weight: bold; color: white;"> صيدلية <br> الفوزان </p>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu"
-                        aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             <div class="collapse navbar-collapse" id="main_menu">
                 <ul class="navbar-nav ml-auto ">
@@ -23,11 +23,17 @@
                         <a href="{{ route('job.index') }}"> الوظائف</a>
                     </li>
                     <li>
-                        <a href=""><i class="icofont-arrow-left" title="تسجيل الخروج"></i></a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                            <i class="flaticons-027-back mr-2 " style="vertical-align: middle" title=""></i>تسجيل الخروج
+                        </a>
                     </li>
                 </ul>
                 <span class="navbar-text">
-                <a href="{{route('index')}}" class="theme-btn">الذهاب الى الموقع الالكتروني</a>
+                    <a href="{{route('index')}}" class="theme-btn">الذهاب الى الموقع الالكتروني</a>
                 </span>
 
             </div>
