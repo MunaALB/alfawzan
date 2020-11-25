@@ -13,14 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('index');
+Route::get('/products', 'FrontendController@products')->name('products');
+Route::get('/', 'FrontendController@index')->name('index');
+Route::get('/show/{product}', 'FrontendController@details')->name('details');
+Route::post('/jobApply','FrontendController@applyToJob')->name('applyToJob');
 
-Route::get('/products', function () {
-    return view('frontend.products');
-})->name('products');
+Route::group(['prefix' => 'product', 'as' => 'product.'], function () {
 
-Route::get('/product-details', function () {
-    return view('frontend.product-details');
-})->name('product-details');
+        Route::get('/create', 'ProductController@create')->name('create');
+        Route::get('/edit/{product}', 'ProductController@edit')->name('edit');
+        Route::get('/show/{product}', 'ProductController@show')->name('show');
+        Route::post('/update/{product}', 'ProductController@update')->name('update');
+        Route::post('/store', 'ProductController@store')->name('store');
+        Route::get('/index', 'ProductController@index')->name('index');
+        Route::get('/delete/{product}', 'ProductController@destroy')->name('delete');
+        Route::post('/advertise/{product}', 'ProductController@advertise')->name('advertise');
+});
+
+Route::group(['prefix' => 'advertisement', 'as' => 'advertisement.'], function () {
+    Route::get('/create', 'AdvertisementController@create')->name('create');
+    Route::post('/store', 'AdvertisementController@store')->name('store');
+});
+
+Route::group(['prefix' => 'job', 'as' => 'job.'], function () {
+    Route::get('/index', 'JobController@index')->name('index');
+});
+
+

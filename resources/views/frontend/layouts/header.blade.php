@@ -39,7 +39,7 @@
                     <div class="collapse navbar-collapse" id="main_menu">
                         <ul class="navbar-nav ml-auto">
                             <li>
-                                <a href="index.php">الرئيسية</a>
+                                <a href="{{ route('index') }}">الرئيسية</a>
                             </li>
                             <li>
                                 <a href="{{ route('index') }}#about-us"> من نحن </a>
@@ -51,7 +51,7 @@
                                 <a href="{{ route('index') }}#testimonial">آراء</a>
                             </li>
                             <li>
-                                <a href="{{route('products')}}">منتجاتنا </a>
+                                <a href="{{ route('products') }}">منتجاتنا </a>
                             </li>
 
                         </ul>

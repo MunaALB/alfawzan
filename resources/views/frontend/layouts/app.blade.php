@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Alfawzan - alfawzan pharmacy" />
     <meta name="author" content="DigiX" />
-    <title>Alfawzan - @yield('title')</title>
+    <title>الفوزان - @yield('title')</title>
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" />
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}" />
@@ -42,6 +42,18 @@
     <script src="{{asset('js/main.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{{ asset('js/summernote-ar-AR.js') }}"></script>
+     <script>
+          function sweetalert(type, header, message) {
+                    return Swal.fire({
+                        icon: type,
+                        title: header,
+                        text: message,
+                        showConfirmButton: true,
+                        timer: 1500
+                    })
+                }
+    </script>
 </body>
 </html>

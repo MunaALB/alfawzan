@@ -1,5 +1,5 @@
 	var createProductForm = $("#create_form");
-	
+
 	createProductForm.validate({
 		debug: false,
 		submitHandler: function (createProductForm) {
@@ -7,7 +7,7 @@
 			var fd = new FormData(createProductForm);
 			$.ajax({
 				type: "POST",
-				url: "../../admin/request_functions/create.php",
+				url: "",
 				data: fd,
 				processData: false,
 				contentType: false,
@@ -20,7 +20,7 @@
 						text: 'تم اضافة عمل جديد',
 					}).then((result) => {
 						if (result.value) {
-							window.location = '../../admin/products/all.php'
+							window.location = window.location
 						}
 					})
 				},

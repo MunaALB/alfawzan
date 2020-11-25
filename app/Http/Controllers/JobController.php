@@ -14,7 +14,8 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        $applications = Job::all();
+        return view('backend.jobs.index')->with(['applications'=>$applications]);
     }
 
     /**

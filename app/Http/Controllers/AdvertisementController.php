@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Advertisement;
 use Illuminate\Http\Request;
-
+use Validator;
+use DB;
 class AdvertisementController extends Controller
 {
     /**
@@ -12,10 +13,6 @@ class AdvertisementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +21,7 @@ class AdvertisementController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.advertisements.create');
     }
 
     /**
@@ -35,51 +32,27 @@ class AdvertisementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $rules = [
+            'image' => 'required|file',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()->all(), 'status' => 'error']);
+        }
+
+         DB::beginTransaction();
+        try {
+            $path =  $request->file('image')->store('public/ads');
+            $advertisement = new Advertisement;
+            $advertisement->image = str_replace('public', 'storage', $path);
+            $advertisement->save();
+            DB::commit();
+        }
+        catch (Exception $ex) {
+            DB::rollback();
+            return response()->json(['db_errors' => $ex->getMessage(), 'status' => 'fail'], 500);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Advertisement  $advertisement
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Advertisement $advertisement)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Advertisement  $advertisement
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Advertisement $advertisement)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Advertisement  $advertisement
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Advertisement $advertisement)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Advertisement  $advertisement
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Advertisement $advertisement)
-    {
-        //
-    }
 }

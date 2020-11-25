@@ -1,12 +1,12 @@
 @extends('frontend.layouts.app')
-
+@section('title', 'المنتجات')
 @section('content')
 <div class="page_header d-flex align-items-center">
     <div class="container">
         <section>
             <h2>عن منتجاتنا</h2>
             <div class="breadcrumbs">
-                <a href="index.php">الرئيسة</a>
+                <a href="{{ route('index') }}">الرئيسة</a>
                 <span>منتجاتنا</span>
             </div>
         </section>
@@ -21,128 +21,36 @@
                     <li>
                         <a class="active-filter" href="#" data-filter="*">كل المنتجات</a>
                     </li>
+                    @foreach($categories as $category)
                     <li>
-                        <a href="#" data-filter="*">الطبية</a>
+                        <a href="#" data-filter="*">{{$category->title}}</a>
                     </li>
-                    <li>
-                        <a href="#" data-filter="*">العناية بالبشرة</a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter="*">الاطفال</a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter="*">العناية بالشعر</a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter="*">أغذية رياضية</a>
-                    </li>
+                    @endforeach
+
                 </ul>
             </div>
+            @foreach($products as $product)
             <div class="col-xl-6">
                 <div class="blog-card d-flex flex-sm-row flex-column">
                     <div class="the_post_thumbnail">
-                        <a href="#"><img src="{{ asset('img/blog/06.jpg') }}" alt="Blog Title" /></a>
+                        <a href="#"><img src="{{ asset($product->image) }}" alt="Blog Title" height="260" /></a>
                     </div>
                     <div class="blog-card-body">
-                        <span class="the_date">25, February, 2020</span>
+                        <span class="the_date">{{$product->created_at->format('d/m/Y')}}</span>
                         <h2 class="the_title">
-                            <a href="#">If you find your self constantly book marking and health
-                                sections.</a>
+                            <a href="#">{{ $product->title }}</a>
                         </h2>
-                        <a href="{{ route('product-details') }}" class="the_permalink">Read more <i class="icofont-arrow-left"></i></a>
-                        <span class="the_time">5 hours ago</span>
+                        <a href="" class="the_permalink">المزيد <i class="icofont-arrow-left"></i></a>
+                        <span class="the_time">{{$product->created_at->format('H:i:s')}}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6">
-                <div class="blog-card d-flex flex-sm-row flex-column">
-                    <div class="the_post_thumbnail">
-                        <a href="#"><img src="{{ asset('img/blog/06.jpg') }}" alt="Blog Title" /></a>
-                    </div>
-                    <div class="blog-card-body">
-                        <span class="the_date">25, February, 2020</span>
-                        <h2 class="the_title">
-                            <a href="#">If you find your self constantly book marking and health
-                                sections.</a>
-                        </h2>
-                        <a href="#" class="the_permalink">Read more <i class="icofont-arrow-right"></i></a>
-                        <span class="the_time">5 hours ago</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="blog-card d-flex flex-sm-row flex-column">
-                    <div class="the_post_thumbnail">
-                        <a href="#"><img src="{{ asset('img/blog/06.jpg') }}" alt="Blog Title" /></a>
-                    </div>
-                    <div class="blog-card-body">
-                        <span class="the_date">25, February, 2020</span>
-                        <h2 class="the_title">
-                            <a href="#">If you find your self constantly book marking and health
-                                sections.</a>
-                        </h2>
-                        <a href="#" class="the_permalink">Read more <i class="icofont-arrow-right"></i></a>
-                        <span class="the_time">5 hours ago</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="blog-card d-flex flex-sm-row flex-column">
-                    <div class="the_post_thumbnail">
-                        <a href="#"><img src="{{ asset('img/blog/06.jpg') }}" alt="Blog Title" /></a>
-                    </div>
-                    <div class="blog-card-body">
-                        <span class="the_date">25, February, 2020</span>
-                        <h2 class="the_title">
-                            <a href="#">If you find your self constantly book marking and health
-                                sections.</a>
-                        </h2>
-                        <a href="#" class="the_permalink">Read more <i class="icofont-arrow-right"></i></a>
-                        <span class="the_time">5 hours ago</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="blog-card d-flex flex-sm-row flex-column">
-                    <div class="the_post_thumbnail">
-                        <a href="#"><img src="{{ asset('img/blog/06.jpg') }}" alt="Blog Title" /></a>
-                    </div>
-                    <div class="blog-card-body">
-                        <span class="the_date">25, February, 2020</span>
-                        <h2 class="the_title">
-                            <a href="#">If you find your self constantly book marking and health
-                                sections.</a>
-                        </h2>
-                        <a href="#" class="the_permalink">Read more <i class="icofont-arrow-right"></i></a>
-                        <span class="the_time">5 hours ago</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="blog-card d-flex flex-sm-row flex-column">
-                    <div class="the_post_thumbnail">
-                        <a href="#"><img src="{{ asset('img/blog/06.jpg') }}" alt="Blog Title" /></a>
-                    </div>
-                    <div class="blog-card-body">
-                        <span class="the_date">25, February, 2020</span>
-                        <h2 class="the_title">
-                            <a href="#">If you find your self constantly book marking and health
-                                sections.</a>
-                        </h2>
-                        <a href="#" class="the_permalink">Read more <i class="icofont-arrow-right"></i></a>
-                        <span class="the_time">5 hours ago</span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-    <nav class="navigation pagination">
+     <nav class="navigation pagination mb-3">
         <div class="nav-links">
-            <a class="prev page-numbers" href="#"><i class="icofont-arrow-left"></i></a>
-            <a class="page-numbers" href="#">1</a>
-            <span class="page-numbers current">2</span>
-            <a class="page-numbers" href="#">3</a>
-            <a class="next page-numbers" href="#"><i class="icofont-arrow-right"></i></a>
+           {{ $products->links() }}
         </div>
     </nav>
 </div>

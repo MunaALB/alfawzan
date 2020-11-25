@@ -1563,7 +1563,7 @@ img {
 }
 
 .blog_posts .blog-card-body {
-    padding: 35px 20px 35px 25px;
+    padding: 20px 20px 9px 25px;
 }
 
 .blog_posts .blog-card-body::before {
@@ -1602,6 +1602,20 @@ img {
     display: inline-block;
     margin-bottom: 8px;
     position: relative;
+}
+
+.the_permalink.danger {
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.the_permalink.yellow {
+    color: #d6da1e;
+    cursor: pointer;
+}
+
+.the_permalink.warning {
+    color: #00DF8B;
 }
 
 .blog-card-body .the_permalink i {
@@ -1655,6 +1669,11 @@ img {
 
 .blog_posts {
     margin-top: 130px;
+}
+
+.applications-section {
+    margin-top: 130px;
+    margin-bottom: 100px;
 }
 
 .navigation.pagination {
@@ -1800,8 +1819,16 @@ img {
 
 .post_footer {
     margin: 25px 0 50px;
-    padding: 24px 30px 27px;
-    background: #fff;
+    padding: 24px 0px 27px;
+
+}
+
+.advertised {
+    float: left;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-weight: bold
 }
 
 .post_tags>span,

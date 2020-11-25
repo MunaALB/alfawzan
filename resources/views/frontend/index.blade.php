@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('title', 'الرئيسية')
 @section('content')
 <div class="hero-section">
     <div class="container-lg h-100 px-lg-0">
@@ -97,28 +97,30 @@
         </div>
     </div>
 </div>
+@if($advertised_product)
 <div class="video-section">
     <div class="container-xl px-xl-0">
         <div class="video-section-content">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2 order-1">
                     <div class="video-banner">
-                        <img src="{{ asset('img/ad1.jpeg') }}" alt="Video Banner" />
+                        <img src="{{ asset($advertised_product->image)}}" alt="Video Banner" />
                     </div>
                 </div>
 
                 <div class="col-lg-6 px-xl-5 order-lg-1 order-2">
                     <section>
-                        <h3>[العناية بالأسنان]</h3>
-                        <h2>حافظ على نظافة أسنانك <span>بالشكل المثالي</span> مع فرشاة اورال بي فيتاليتي بلس
+                        <h3>منتج مميز يليق بزبائننا المميزين</h3>
+                        <h2>{{ $advertised_product->title }}
                         </h2>
-                        <a href="#" class="theme-btn"> تفاصيل المنتج <i class="icofont-arrow-left"></i> </a>
+                        <a href="{{ route('details',['product'=>$advertised_product->id]) }}" class="theme-btn"> تفاصيل المنتج <i class="icofont-arrow-left"></i> </a>
                     </section>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endif
 <div class="team-section" id="team">
     <div class="container">
         <div class="row justify-content-center">
@@ -165,7 +167,7 @@
                 <div class="team-member blank">
                     <h2>إنضم إلينا</h2>
                     <p> إن كنت تأنس في نفسك الكفاءة ولديك الرغبة في الإنضمام إلينا لا تتردد في ذلك</p>
-                    <a href="#">
+                    <a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
                         <i class="icofont-plus"></i>
                     </a>
                 </div>
@@ -173,9 +175,12 @@
         </div>
     </div>
 </div>
+@include('frontend.modals.apply-to-job-modal');
+@if($advertisement_image)
 <div class="fun-facts">
-    <img src="img/ad7.jpeg" width=100%>
+    <img src="{{ asset($advertisement_image->image) }}" width=100%>
 </div>
+@endif
 <div class="testimony-section" dir="ltr" id="testimonial">
     <div class="container">
         <div class="row justify-content-center">
@@ -564,34 +569,22 @@
         <div class="row">
             <div class="slide-progress"></div>
             <div class="blog-carousel owl-carousel">
-                <div class="blog-card d-flex flex-sm-row flex-column">
+                @foreach($products as $product)
+                <div class="blog-card d-flex flex-sm-row-reverse flex-column">
                     <div class="the_post_thumbnail">
-                        <img src="img/ad2.jpeg" alt="Blog Title" />
+                        <img src="{{ asset($product->image) }}" alt="Blog Title" height="260" />
                     </div>
                     <div class="blog-card-body">
-                        <span class="the_date">25, February, 2020</span>
+                        <span class="the_date">{{$product->created_at->format('d/m/Y')}}</span>
                         <h2 class="the_title">
-                            <a href="#">If you find your self constantly book marking and health
-                                sections.</a>
+                            <a href="#">{{ $product->title }}</a>
                         </h2>
-                        <a href="#" class="the_permalink">Read more <i class="icofont-arrow-right"></i></a>
-                        <span class="the_time">5 hours ago</span>
+                        <a href="{{ route('details',['product'=>$product->id]) }}" class="the_permalink"><i class="icofont-arrow-left"></i>اقرأ المزيد</a>
+                        <span class="the_time">{{$product->created_at->format('H:i:s')}}</span>
                     </div>
                 </div>
-                <div class="blog-card d-flex flex-sm-row flex-column">
-                    <div class="the_post_thumbnail">
-                        <img src="img/ad3.jpeg" alt="Blog Title" />
-                    </div>
-                    <div class="blog-card-body">
-                        <span class="the_date">25, February, 2020</span>
-                        <h2 class="the_title">
-                            <a href="#">If you find your self constantly book marking and health
-                                sections.</a>
-                        </h2>
-                        <a href="#" class="the_permalink">Read more <i class="icofont-arrow-right"></i></a>
-                        <span class="the_time">5 hours ago</span>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -668,4 +661,45 @@
             tabindex="0"></iframe>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    new Vue({
+        el: '#apply',
+        data: {
+            applicant_name: '',
+            applicant_email: '',
+            applicant_cv: '',
+            errors: [],
+        },
+
+        methods: {
+
+            applyToJob() {
+                this.applicant_cv = document.getElementById('cv').files[0];
+                let data = new FormData();
+                data.append('applicant_name', this.applicant_name);
+                data.append('applicant_email', this.applicant_email);
+                data.append('applicant_cv', this.applicant_cv);
+                let settings = {
+                    headers: {
+                        "content-type": "multipart/form-data"
+                    }
+                };
+
+                axios
+                    .post("{{ route('applyToJob')}}", data, settings)
+                    .then(response => {
+                        if (response.data.status == "error") {
+                            this.errors = response.data.error;
+                            return;
+                        }
+                        sweetalert('success', 'تم', 'تم التقديم بنجاح')
+                            $('#exampleModal').modal('hide')
+                    })
+            }
+        }
+    });
+
+</script>
 @stop

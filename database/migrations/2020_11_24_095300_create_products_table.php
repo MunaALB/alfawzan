@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('image');
-            $table->boolean('advertise')->default('0');
+            $table->boolean('is_advertised')->default('0');
             $table->longText('description');
              $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
