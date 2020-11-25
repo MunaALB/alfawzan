@@ -997,9 +997,9 @@ img {
 }
 
 .service-card>[class^="flaticon-"]::before {
-    font-size: 50px;
+    font-size: 60px;
     color: #175BD4;
-    font-weight: bold;
+
     transition: all .3s ease;
 }
 
@@ -2002,7 +2002,7 @@ img {
     font-size: 16px;
     line-height: 25px;
     color: #fff;
-    margin: 35px 0;
+    margin: 20px 0;
 }
 
 .footer-social a {

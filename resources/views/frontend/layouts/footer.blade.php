@@ -2,7 +2,7 @@
             <div class="footer-lg">
                 <div class="container">
                     <div class="row justify-content-lg-between">
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-4 col-md-4">
                             <div class="footer-col">
                                 <a class="" href="index.php">
                                     <img src="{{ asset('img/logo.png') }}" alt="Site Logo">
@@ -24,31 +24,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="footer-col">
-                                <h2 class="footer-title">أصنافنا</h2>
-                                <ul>
-                                    <li><a href="#">العناية بالطفل</a></li>
-                                    <li><a href="#">العناية بالشعر</a></li>
-                                    <li><a href="#">العناية بالبشرة</a></li>
-                                    <li><a href="#">منتجات طبيعية</a></li>
-                                    <li><a href="#">مستلزمات طبية</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
+                        <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="footer-col">
                                 <h2 class="footer-title">توجيه</h2>
                                 <ul>
                                     <li><a href="#aboute-us">عن صيدلية الفوزان</a></li>
                                     <li><a href="#products">منتجاتنا</a></li>
-                                    <li><a href="#conceling">الحصول على استشارة</a></li>
-                                    <li><a href="#ad">اعلانات</a></li>
-                                    <li><a href="contact.html">اتصل بنا </a></li>
+                                    <li><a href="#contact-us">الحصول على استشارة</a></li>
+
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-3 col-md-6 pl-xl-0">
+                        <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="footer-col">
                                 <h2 class="footer-title">بيانات الاتصال</h2>
                                 <p><i class="icofont-google-map mr-1"></i>طريق زناتة الجديدة بالقرب من كوبري السريع</p>

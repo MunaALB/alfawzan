@@ -48,49 +48,49 @@
         <div class="row no-gutters">
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="service-card">
-                    <i class="flaticon-060-cardiogram-4"></i>
+                    <i class="flaticon-026-stethoscope"></i>
                     <h2>العناية بالطفل</h2>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="service-card">
-                    <i class="flaticon-045-molecule"></i>
+                    <i class="flaticon-025-spray"></i>
                     <h2>العناية بالشعر</h2>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="service-card">
-                    <i class="flaticon-124-laptop"></i>
+                    <i class="flaticon-006-sunscreen"></i>
                     <h2>العناية بالبشرة</h2>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="service-card">
-                    <i class="flaticon-143-teeth"></i>
+                    <i class="flaticon-018-mortar"></i>
                     <h2>منتجات طبيعية</h2>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="service-card">
-                    <i class="flaticon-047-head"></i>
+                    <i class="flaticon-016-first-aid-kit"></i>
                     <h2>مستلزمات طبية</h2>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="service-card">
-                    <i class="flaticon-109-injection"></i>
+                    <i class="flaticon-020-pharmacist"></i>
                     <h2>العناية بالمرأة</h2>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="service-card">
-                    <i class="flaticon-027-stomach"></i>
+                    <i class="flaticon-019-pharmacist"></i>
                     <h2>العناية بالرجل </h2>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="service-card">
-                    <i class="flaticon-017-molecules"></i>
+                    <i class="flaticon-036-whey-protein"></i>
                     <h2>أغذية رياضية</h2>
                 </div>
             </div>
